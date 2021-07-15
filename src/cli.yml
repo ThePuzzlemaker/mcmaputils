@@ -1,0 +1,43 @@
+name: mcmaputils
+author: ThePuzzlemaker <tpzker@thepuzzlemaker.info>
+about: Utilties for converting images to and from Minecraft maps
+settings:
+  - SubcommandRequired
+subcommands:
+  - map2image:
+      about: Turn a `map_#.dat` file into an image.
+      visible_aliases:
+        - m2i
+        - map2img
+      args:
+        - map_#.dat:
+            help: The map data file, located in `[world root]/data/`
+            required: true
+            index: 1
+        - output:
+            help: The output image file path
+            required: true
+            index: 2
+        - format:
+            short: f
+            long: format
+            help: The format to use for the output image. By default this is set to `detect`. Use `--help` to show supported formats.
+            long_help: |
+              The format to use for the output image. By default this is set to `detect`.
+              Supported formats:
+              - `png`
+              - `jpeg`/`jpg`
+              - `bmp`
+              - `detect`: Detect based on output file extension. This will error if the output format could not be detected.
+            possible_values:
+              - png
+              - jpeg
+              - jpg
+              - bmp
+              - detect
+            default_value: detect
+        - scale:
+            short: s
+            long: scale
+            help: A non-zero integer scaling factor to use when creating the output image. This will scale using nearest-neighbor interpolation to preserve the blocky feel of a Minecraft map.
+            default_value: "1"

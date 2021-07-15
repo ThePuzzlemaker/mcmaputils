@@ -1,0 +1,18 @@
+[package]
+name = "mcmaputils"
+version = "0.1.0"
+authors = ["ThePuzzlemaker <tpzker@thepuzzlemaker.info>"]
+edition = "2018"
+description = "Utilties for converting images to and from Minecraft maps"
+readme = "README.md"
+homepage = "https://github.com/ThePuzzlemaker/mcmaputils"
+repository = "https://github.com/ThePuzzlemaker/mcmaputils.git"
+license = "MIT OR Apache-2.0"
+keywords = ["minecraft"]
+categories = ["command-line-utilities", "games", "multimedia::images", "multimedia::encoding"]
+
+[dependencies]
+clap = { version = "2.33.3", features = ["yaml"] }
+hematite-nbt = "0.5.2"
+image = "0.23.14"
+serde = { version = "1.0.126", features = ["derive"] }
